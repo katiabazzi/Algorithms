@@ -14,6 +14,10 @@ Stack.prototype.pop = function(){
   };
 };
 
+Stack.prototype.peek = function(){
+  return this.list[this.list.length-1]
+}
+
 
 //Tests for the stack
 
@@ -29,3 +33,11 @@ console.log(my_stack.list[0] === 3);
 my_stack.pop()
 console.log(my_stack.list.length === 0);
 
+//Test if you can peek at the top of the stack
+my_stack.push(3);
+my_stack.push(4);
+console.log(my_stack.peek()===4);
+
+//Test to see if you remove the correct item from teh stack
+my_stack.pop()
+console.log(my_stack.peek()===3);
