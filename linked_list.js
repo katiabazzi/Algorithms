@@ -110,16 +110,6 @@ DoubleLinkedList.prototype.insert = function(value) {
   }
 }
 
-// Test insert method for double linked list
-var double_linked_list = new DoubleLinkedList();
-double_linked_list.insert("3");
-console.log(double_linked_list.head.val === "3");
-console.log(double_linked_list.head.next === null);
-console.log(double_linked_list.head.prev === null);
-double_linked_list.insert("6");
-console.log(double_linked_list.head.next.val === "6");
-console.log(double_linked_list.head.next.prev.val === "3");
-console.log(double_linked_list.head.prev === null);
 
 
 
@@ -153,3 +143,17 @@ DoubleLinkedList.prototype.remove = function(value) {
     }
   }
 }
+
+
+// Test insert method for double linked list
+var double_linked_list = new DoubleLinkedList();
+double_linked_list.insert("3");
+console.log(double_linked_list.head.val === "3");
+console.log(double_linked_list.head.next === null);
+console.log(double_linked_list.head.prev === null);
+double_linked_list.insert("6");
+console.log(double_linked_list.head.next.val === "6");
+console.log(double_linked_list.head.next.prev.val === "3");
+console.log(double_linked_list.head.prev === null);
+
+// Test remove method for double linked list
