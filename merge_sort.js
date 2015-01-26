@@ -1,13 +1,13 @@
 var mergeSort = function(list) {
   if (list.length === 1) {
-    return list
+    return list;
   } else {
     var middle = list.length/2;
     var left = list.slice(0, middle);
     var right = list.slice(middle, list.length);
-    var sortedRight = mergeSort(right);
-    var sortedLeft = mergeSort(left);
-    return merge(sortedLeft, sortedRight);
+    right = mergeSort(right);
+    left = mergeSort(left);
+    return merge(left, right);
   }
 }
 
@@ -25,20 +25,24 @@ var merge = function(left, right) {
       rightIndex += 1
     }
   }
-  if (leftIndex > left.length) {
-    while (leftIndex < left.length){ 
-      result.push(left[leftIndex])
-      leftIndex += 1
-    }
-  } else {
-    // result.push(right[rightIndex])
+  if (leftIndex >= left.length) {
     while (rightIndex < right.length){ 
       result.push(right[rightIndex])
       rightIndex += 1
     }
-  }
+  } else {
+    while (leftIndex < left.length){ 
+      result.push(left[leftIndex])
+      leftIndex += 1
+      }
+    }
   return result
-}
+} 
+
+// test merge
+var example1 = new mergeSort([1, 3, 2, 7, 1, -1, 0])
+// console.log(example1.length === 3)
+console.log(example1)
 
 
 
